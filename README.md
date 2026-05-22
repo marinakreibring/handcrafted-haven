@@ -18,6 +18,31 @@ Handcrafted Haven is a web application marketplace for artisans and crafters to 
 
 ## Team Members
 - Marina Kreibring
+- Santiago Benjamin Irigoyen
+
+## Styling
+- Colors
+https://coolors.co/331832-d81e5b-f0544f-c6d8d3-fdf0d5
+
+- Fonts
+Titles: Playfair Display
+Paragraph: Inter (clean modern UI)
+
+## STRUCTURE
+Navbar:
+- Home
+- Shop
+- Sellers
+- About
+Hero Section
+Featured Categories
+Featured Products
+About Artisans
+Testimonials
+Footer
+
+
+
 
 
 ## Learn More

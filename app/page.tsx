@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 const featuredProducts = [
@@ -5,32 +8,46 @@ const featuredProducts = [
     id: 1,
     name: "Handmade Ceramic Vase",
     price: "$45",
-    image: "/images/product1.jpg",
+    image: "/images/featured-product1.webp",
+    seller: "Emily Carter",
+    location: "Portland, Oregon",
+    description:
+      "Beautiful handcrafted ceramic vase made with natural clay and glazed by hand. Perfect for modern or rustic home decoration.",
   },
   {
     id: 2,
     name: "Knitted Wool Blanket",
     price: "$68",
-    image: "/images/product2.jpg",
+    image: "/images/featured-product2.webp",
+    seller: "Sophia Bennett",
+    location: "Vancouver, Canada",
+    description:
+      "Soft premium wool blanket knitted entirely by hand using traditional techniques. Designed for warmth, comfort, and timeless style.",
   },
   {
     id: 3,
     name: "Wooden Artisan Bowl",
     price: "$32",
-    image: "/images/product3.jpg",
+    image: "/images/featured-product3.webp",
+    seller: "Michael Brown",
+    location: "Austin, Texas",
+    description:
+      "Hand-carved wooden bowl crafted from sustainable walnut wood. Each piece is unique and finished with natural oils.",
   },
 ];
 
 export default function Home() {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+
+  const toggleCard = (id: number) => {
+    setExpandedCard(expandedCard === id ? null : id);
+  };
+
   return (
     <main className="px-8 py-8 min-h-screen bg-[#faf7f2] text-[#2d2d2d]">
-
       {/* NAVBAR */}
       <nav className="flex items-center justify-between mb-16">
-
-        <h1 className="text-2xl font-bold">
-          Handcrafted Haven
-        </h1>
+        <h1 className="text-2xl font-bold">Handcrafted Haven</h1>
 
         <div className="hidden md:flex gap-8 items-center">
           <a href="#" className="hover:text-amber-700 transition">
@@ -57,7 +74,6 @@ export default function Home() {
 
       {/* HERO */}
       <section className="grid md:grid-cols-2 gap-10 items-center mb-24">
-
         {/* LEFT SIDE */}
         <div>
           <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
@@ -65,8 +81,8 @@ export default function Home() {
           </h2>
 
           <p className="text-lg mb-8 max-w-md text-gray-700">
-            Support talented artisans and explore handcrafted products
-            made with care, creativity, and passion.
+            Support talented artisans and explore handcrafted products made
+            with care, creativity, and passion.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
@@ -86,16 +102,15 @@ export default function Home() {
             src="/images/hero.jpg"
             alt="Handcrafted pottery"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
             priority
           />
         </div>
-
       </section>
 
       {/* FEATURED PRODUCTS */}
       <section className="mb-24">
-
         <div className="mb-12 text-center">
           <h3 className="text-4xl font-bold mb-4">
             Featured Products
@@ -108,40 +123,143 @@ export default function Home() {
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {featuredProducts.map((product) => {
+            const isExpanded = expandedCard === product.id;
 
-          {featuredProducts.map((product) => (
-            <div
-              key={product.id}
-              className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300"
-            >
+            return (
+              <div
+                key={product.id}
+                className={`
+                  bg-white rounded-3xl overflow-hidden
+                  shadow-md hover:shadow-2xl
+                  transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+                  transform-gpu
+                  ${
+                    isExpanded
+                      ? "lg:col-span-2 scale-[1.015]"
+                      : "hover:-translate-y-1"
+                  }
+                `}
+              >
+                <div
+                  className={`
+                    grid overflow-hidden
+                    transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+                    ${
+                      isExpanded
+                        ? "md:grid-cols-2"
+                        : "grid-cols-1"
+                    }
+                  `}
+                >
+                  {/* IMAGE */}
+                  <div
+                    className={`
+                      relative w-full overflow-hidden
+                      transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+                      ${
+                        isExpanded
+                          ? "h-[520px]"
+                          : "h-72"
+                      }
+                    `}
+                  >
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className={`
+                        object-cover
+                        transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+                        ${
+                          isExpanded
+                            ? "scale-105"
+                            : "hover:scale-110"
+                        }
+                      `}
+                    />
+                  </div>
 
-              <div className="relative h-72 w-full">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover"
-                />
+                  {/* CONTENT */}
+                  <div className="p-6 flex flex-col justify-between">
+                    <div>
+                      <h4 className="text-2xl font-semibold mb-2">
+                        {product.name}
+                      </h4>
+
+                      <p className="text-amber-700 font-bold text-lg mb-4">
+                        {product.price}
+                      </p>
+
+                      <div
+                        className={`
+                          overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+                          ${
+                            isExpanded
+                              ? "max-h-[500px] opacity-100 translate-y-0"
+                              : "max-h-0 opacity-0 -translate-y-2"
+                          }
+                        `}
+                      >
+                        <div className="pt-2">
+                          <div className="mb-4">
+                            <p className="font-semibold text-lg">
+                              Seller
+                            </p>
+
+                            <p className="text-gray-700">
+                              {product.seller}
+                            </p>
+
+                            <p className="text-sm text-gray-500">
+                              {product.location}
+                            </p>
+                          </div>
+
+                          <div className="mb-6">
+                            <p className="font-semibold text-lg mb-2">
+                              Product Details
+                            </p>
+
+                            <p className="text-gray-700 leading-relaxed">
+                              {product.description}
+                            </p>
+                          </div>
+
+                          <div className="flex gap-3 flex-wrap">
+                            <button className="bg-amber-700 text-white px-5 py-3 rounded-full hover:bg-amber-800 transition-all duration-300 hover:scale-105">
+                              Add to Cart
+                            </button>
+
+                            <button className="border border-black px-5 py-3 rounded-full hover:bg-black hover:text-white transition-all duration-300 hover:scale-105">
+                              Contact Seller
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={() => toggleCard(product.id)}
+                      className="
+                        w-full bg-black text-white py-3 rounded-full
+                        hover:bg-amber-700
+                        transition-all duration-500
+                        hover:scale-[1.02]
+                        active:scale-[0.98]
+                        mt-6
+                      "
+                    >
+                      {isExpanded
+                        ? "Close Details"
+                        : "View Product"}
+                    </button>
+                  </div>
+                </div>
               </div>
-
-              <div className="p-6">
-
-                <h4 className="text-2xl font-semibold mb-2">
-                  {product.name}
-                </h4>
-
-                <p className="text-amber-700 font-bold text-lg mb-4">
-                  {product.price}
-                </p>
-
-                <button className="w-full bg-black text-white py-3 rounded-full hover:bg-amber-700 transition">
-                  View Product
-                </button>
-
-              </div>
-            </div>
-          ))}
-
+            );
+          })}
         </div>
       </section>
 
@@ -151,7 +269,6 @@ export default function Home() {
           © 2026 Handcrafted Haven — Supporting artisans worldwide.
         </p>
       </footer>
-
     </main>
   );
 }

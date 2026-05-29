@@ -3,6 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+
 const featuredProducts = [
   {
     id: 1,
@@ -44,33 +47,8 @@ export default function Home() {
   };
 
   return (
-    <main className="px-8 py-8 min-h-screen bg-[#faf7f2] text-[#2d2d2d]">
-      {/* NAVBAR */}
-      <nav className="flex items-center justify-between mb-16">
-        <h1 className="text-2xl font-bold">Handcrafted Haven</h1>
-
-        <div className="hidden md:flex gap-8 items-center">
-          <a href="#" className="hover:text-amber-700 transition">
-            Home
-          </a>
-
-          <a href="#" className="hover:text-amber-700 transition">
-            Shop
-          </a>
-
-          <a href="#" className="hover:text-amber-700 transition">
-            Artisans
-          </a>
-
-          <a href="#" className="hover:text-amber-700 transition">
-            About
-          </a>
-
-          <button className="px-5 py-2 rounded-full border border-black hover:bg-black hover:text-white transition">
-            Sign In
-          </button>
-        </div>
-      </nav>
+    <main className="container-custom">
+      <Navbar />
 
       {/* HERO */}
       <section className="grid md:grid-cols-2 gap-10 items-center mb-24">
@@ -100,7 +78,7 @@ export default function Home() {
         <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-xl">
           <Image
             src="/images/hero.jpg"
-            alt="Handcrafted pottery"
+            alt="Handcrafted embroidery"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
@@ -264,11 +242,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t pt-8 text-center text-gray-600">
-        <p>
-          © 2026 Handcrafted Haven — Supporting artisans worldwide.
-        </p>
-      </footer>
+      <Footer />
     </main>
   );
 }

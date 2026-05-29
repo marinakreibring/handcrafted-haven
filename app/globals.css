@@ -55,3 +55,27 @@ a:hover {
   padding: 4px 8px;
   border-radius: 8px;
 }
+
+.container-custom {
+  
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.nav-link {
+  transition: 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+  background-color: var(--primary);
+}
+
+.nav-link.active {
+  color: var(--secondary);
+  background-color: var(--background);
+  font-weight: 600;
+}
+

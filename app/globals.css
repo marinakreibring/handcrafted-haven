@@ -45,17 +45,6 @@ button:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
-a {
-  transition: 0.2s ease;
-}
-
-a:hover {
-  color: var(--accent);
-  background-color: var(--primary);
-  padding: 4px 8px;
-  border-radius: 8px;
-}
-
 .container-custom {
   
   margin: 0 auto;

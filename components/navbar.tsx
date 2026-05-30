@@ -11,7 +11,7 @@ export default function Navbar() {
       
       {/* LOGO */}
       <Link href="/">
-        <h1 className="text-2xl font-bold">
+        <h1 className="nav-link text-2xl font-bold">
           Handcrafted Haven
         </h1>
       </Link>

@@ -1,3 +1,4 @@
+import { sql } from "@/app/lib/db"; 
 
 import Image from "next/image";
 
@@ -5,7 +6,11 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 
-export default function ArtisansPage() {    
+export default async function ArtisansPage() {
+    const artisans = await sql`
+  SELECT * FROM artisans
+  ORDER BY name
+`;  
     return (
         <main className="container-custom">
         <Navbar />
@@ -19,8 +24,9 @@ export default function ArtisansPage() {
                 </h2>
 
                 <p className="text-lg mb-8 max-w-md text-gray-700">
-                    Here will be informaton about the artisans, their stories, and the unique 
-                    handmade products they create.
+                    Behind every handcrafted piece is a talented artisan with a unique story. 
+                    Explore the creators who bring passion, creativity, and traditional craftsmanship 
+                    to every product in our marketplace.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
@@ -57,48 +63,45 @@ export default function ArtisansPage() {
                     a passion for their craft, and a commitment to quality and sustainability. 
                     W invite you to explore their work and connect with their stories.
                 </p>
+
                 <div className="grid gap-8 md:grid-cols-3 mt-12">
-                    {/* CARD 1 */}
-                    <div className="bg-white p-8 rounded-3xl shadow-md hover:shadow-xl transition">
-                        <div className="text-5xl mb-4">
-                            a picture of an artisan or their art
+                    {artisans.map((artisan) => (
+                        <div
+                        key={artisan.id}
+                        className="bg-white p-8 rounded-3xl shadow-md hover:shadow-xl transition"
+                        >
+                        <div className="relative h-56 w-full mb-4 rounded-2xl overflow-hidden">
+                            <Image
+                                src={artisan.image_url}
+                                alt={artisan.name}
+                                fill
+                                className="object-cover"
+                            />
                         </div>
-                        <h4 className="text-2xl font-semibold mb-4">
-                            Artisan 1
+
+                        <h4 className="text-2xl font-semibold mb-2">
+                            {artisan.name}
                         </h4>
 
-                        <p className="text-gray-600 leading-relaxed">
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <p className="text-amber-700 font-medium mb-2">
+                            {artisan.craft}
                         </p>
-                    </div>
-                    {/* CARD 2 */}
-                    <div className="bg-white p-8 rounded-3xl shadow-md hover:shadow-xl transition">
-                        <div className="text-5xl mb-4">
-                            a picture of an artisan or their art
-                        </div>
-                        <h4 className="text-2xl font-semibold mb-4">
-                            Artisan 2
-                        </h4>
+
+                        <p className="text-gray-500 text-sm mb-4">
+                            {artisan.location}
+                        </p>
 
                         <p className="text-gray-600 leading-relaxed">
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            {artisan.bio}
                         </p>
-                    </div>
-                    {/* CARD 3 */}
-                    <div className="bg-white p-8 rounded-3xl shadow-md hover:shadow-xl transition">
-                        <div className="text-5xl mb-4">
-                            a picture of an artisan or their art
-                        </div>
-                        <h4 className="text-2xl font-semibold mb-4">
-                            Artisan 3
-                        </h4>
-    
-                    <p className="text-gray-600 leading-relaxed">
-                        lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
+                        <button>View Profile</button>
+                    </div>                 
+                    ))}
+                    
                 </div>
+                
             </div>
-        </div>
+        
     </section>
        
 

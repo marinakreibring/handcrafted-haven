@@ -32,7 +32,7 @@ export default async function ArtisansPage() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                    <button>Shop Now</button>
+                    <button><a href="/shop">Shop Now</a></button>
 
                     <button>
                         Become a Seller

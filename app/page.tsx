@@ -64,11 +64,9 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <button className="bg-amber-700 text-white px-6 py-3 rounded-full hover:bg-amber-800 transition">
-              Shop Now
-            </button>
+            <button><a href="/shop">Shop Now</a></button>
 
-            <button className="border border-black px-6 py-3 rounded-full hover:bg-black hover:text-white transition">
+            <button>
               Become a Seller
             </button>
           </div>

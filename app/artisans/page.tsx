@@ -34,9 +34,7 @@ export default async function ArtisansPage() {
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                     <button><a href="/shop">Shop Now</a></button>
 
-                    <button>
-                        Become a Seller
-                    </button>
+                    <button>Become a Seller</button>
                 </div>
             </div>
 

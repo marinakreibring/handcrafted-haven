@@ -26,9 +26,7 @@ export default function ShopPage() {
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                     <button>Shop Now</button>
 
-                    <button>
-                        Become a Seller
-                    </button>
+                    <button>Become a Seller</button>
                 </div>
             </div>
 

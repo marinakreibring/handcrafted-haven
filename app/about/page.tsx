@@ -15,7 +15,7 @@ export default function AboutPage() {
             {/* LEFT SIDE */}
             <div>
                 <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                    Crafted with Passion. Shared with Purpose.
+                    Crafted with Passion. <br />Shared with Purpose.
                 </h2>
 
                 <p className="text-lg mb-8 max-w-md text-gray-700">

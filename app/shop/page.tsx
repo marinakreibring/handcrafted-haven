@@ -21,7 +21,7 @@ export default async function ShopPage() {
             {/* LEFT SIDE */}
             <div>
                 <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                    Handmade Treasures
+                    Handcrafted Goods, <br /> Made with Love
                 </h2>
 
                 <p className="text-lg mb-8 max-w-md text-gray-700">
@@ -54,7 +54,7 @@ export default async function ShopPage() {
         <section className="mb-24">
             <div className="mb-12 text-center">
                 <h3 className="text-4xl font-bold mb-4">
-                    Featured Handmade Products
+                    Handmade Treasures
                 </h3>
         
                 <p className="text-gray-600 max-w-2xl mx-auto">

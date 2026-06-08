@@ -3,8 +3,8 @@ import Image from "next/image";
 
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import ProductCards from "@/components/ProductCard";
 
+import ShopContent from "@/components/ShopContent";
 
 export default async function ShopPage() {  
     const products = await sql`
@@ -63,7 +63,7 @@ export default async function ShopPage() {
                     supports independent artisans.
                 </p>
         
-                <ProductCards products={products as any} />
+                <ShopContent products={products as any} />
                         
             </div>
                 

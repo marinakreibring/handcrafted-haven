@@ -21,11 +21,11 @@ export default async function ArtisansPage() {
         <section className="grid md:grid-cols-2 gap-10 items-center mb-24">
             {/* LEFT SIDE */}
             <div>
-                <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                <h2 className="text-5xl md:text-6xl mb-6 leading-tight">
                     Meet Our Artisans
                 </h2>
 
-                <p className="text-lg mb-8 max-w-md text-gray-700">
+                <p className="text-lg mb-8 max-w-md">
                     Behind every handcrafted piece is a talented artisan with a unique story. 
                     Explore the creators who bring passion, creativity, and traditional craftsmanship 
                     to every product in our marketplace.
@@ -39,7 +39,7 @@ export default async function ArtisansPage() {
             </div>
 
             {/* RIGHT SIDE */}
-            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-xl">
+            <div className="hero-image">
                 <Image
                     src="/images/about2.jpg"
                     alt="Artisan at work"
@@ -52,13 +52,13 @@ export default async function ArtisansPage() {
         </section>
 
         {/* Artisans Section */}
-        <section className="mb-24">
-            <div className="mb-12 text-center">
-                <h3 className="text-4xl font-bold mb-4">
+        <section className="section">
+            <div className="section-header">
+                <h3 className="section-title">
                     Our Artisans
                 </h3>
 
-                <p className="text-gray-600 max-w-2xl mx-auto">
+                <p className="section-description">
                     Get to know the talented creators behind our handmade products. Each artisan has a unique story, 
                     a passion for their craft, and a commitment to quality and sustainability. 
                     We invite you to explore their work and connect with their stories.

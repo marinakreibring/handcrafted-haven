@@ -14,11 +14,11 @@ export default function AboutPage() {
         <section className="grid md:grid-cols-2 gap-10 items-center mb-24">
             {/* LEFT SIDE */}
             <div>
-                <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                <h2 className="text-5xl md:text-6xl mb-6 leading-tight">
                     Crafted with Passion. <br />Shared with Purpose.
                 </h2>
 
-                <p className="text-lg mb-8 max-w-md text-gray-700">
+                <p className="text-lg mb-8 max-w-md">
                     Handcrafted Haven connects talented artisans with people who appreciate 
                     unique, handmade creations and sustainable craftsmanship.
                 </p>
@@ -31,7 +31,7 @@ export default function AboutPage() {
             </div>
 
             {/* RIGHT SIDE */}
-            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-xl">
+            <div className="hero-image">
                 <Image
                     src="/images/about1.jpg"
                     alt="Handcrafted bags"
@@ -44,13 +44,13 @@ export default function AboutPage() {
         </section>
 
         {/* Values Section */}
-        <section className="mb-24">
-            <div className="mb-12 text-center">
-                <h3 className="text-4xl font-bold mb-4">
+        <section className="section">
+            <div className="section-header">
+                <h3 className="section-title">
                     Our Values
                 </h3>
 
-                <p className="text-gray-600 max-w-2xl mx-auto">
+                <p className="section-description">
                     Handcrafted Haven was created to support independent artisans and celebrate creativity 
                     through handmade products. Our platform gives creators a space to share their stories, 
                     connect with customers, and build sustainable businesses.

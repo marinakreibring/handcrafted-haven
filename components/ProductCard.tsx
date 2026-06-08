@@ -32,16 +32,13 @@ export default function ProductCards({
           <div
             key={product.id}
             className={`
-              bg-white rounded-3xl overflow-hidden
-              shadow-md hover:shadow-2xl
-              transition-all duration-700
-              ${
-                isExpanded
-                  ? "lg:col-span-2 scale-[1.015]"
-                  : "hover:-translate-y-1"
-              }
-            `}
-          >
+                  content-card
+                  ${isExpanded
+                    ? "lg:col-span-2 scale-[1.015]"
+                    : ""
+                  }
+                `}
+              >   
             <div
               className={`
                 grid overflow-hidden

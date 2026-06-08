@@ -20,11 +20,11 @@ export default async function ShopPage() {
         <section className="grid md:grid-cols-2 gap-10 items-center mb-24">
             {/* LEFT SIDE */}
             <div>
-                <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                <h2 className="text-5xl md:text-6xl mb-6 leading-tight">
                     Handcrafted Goods, <br /> Made with Love
                 </h2>
 
-                <p className="text-lg mb-8 max-w-md text-gray-700">
+                <p className="text-lg mb-8 max-w-md ">
                     Discover unique handmade products created by talented artisans.
                     Every item is crafted with care and reflects the creativity,
                     skill, and passion of its maker.
@@ -38,7 +38,7 @@ export default async function ShopPage() {
             </div>
 
             {/* RIGHT SIDE */}
-            <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-xl">
+            <div className="hero-image">
                 <Image
                     src="/images/about3.jpg"
                     alt="Handcrafted jar"
@@ -51,13 +51,13 @@ export default async function ShopPage() {
             </div>
         </section>
         {/* PRODUCTS Section */}
-        <section className="mb-24">
-            <div className="mb-12 text-center">
-                <h3 className="text-4xl font-bold mb-4">
+        <section className="section">
+            <div className="section-header">
+                <h3 className="section-title">
                     Handmade Treasures
                 </h3>
         
-                <p className="text-gray-600 max-w-2xl mx-auto">
+                <p className="section-description">
                     Explore our collection of handcrafted goods made with care, 
                     creativity, and attention to detail. Every purchase directly 
                     supports independent artisans.

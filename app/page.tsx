@@ -54,11 +54,11 @@ export default function Home() {
       <section className="grid md:grid-cols-2 gap-10 items-center mb-24">
         {/* LEFT SIDE */}
         <div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+          <h2 className="text-5xl md:text-6xl mb-6 leading-tight">
             Discover Unique Handmade Treasures
           </h2>
 
-          <p className="text-lg mb-8 max-w-md text-gray-700">
+          <p className="text-lg mb-8 max-w-md">
             Support talented artisans and explore handcrafted products made
             with care, creativity, and passion.
           </p>
@@ -71,7 +71,7 @@ export default function Home() {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-xl">
+        <div className="hero-image">
           <Image
             src="/images/hero.jpg"
             alt="Handcrafted embroidery"
@@ -84,13 +84,13 @@ export default function Home() {
       </section>
 
       {/* FEATURED PRODUCTS */}
-      <section className="mb-24">
-        <div className="mb-12 text-center">
-          <h3 className="text-4xl font-bold mb-4">
+      <section className="section">
+        <div className="section-header">
+          <h3 className="section-title">
             Featured Products
           </h3>
 
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="section-description">
             Explore some of our community’s favorite handcrafted creations,
             carefully made by talented artisans from around the world.
           </p>
@@ -104,17 +104,13 @@ export default function Home() {
               <div
                 key={product.id}
                 className={`
-                  bg-white rounded-3xl overflow-hidden
-                  shadow-md hover:shadow-2xl
-                  transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-                  transform-gpu
-                  ${
-                    isExpanded
-                      ? "lg:col-span-2 scale-[1.015]"
-                      : "hover:-translate-y-1"
+                  content-card
+                  ${isExpanded
+                    ? "lg:col-span-2 scale-[1.015]"
+                    : ""
                   }
                 `}
-              >
+              >   
                 <div
                   className={`
                     grid overflow-hidden

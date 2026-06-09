@@ -25,8 +25,7 @@ export default function AboutPage() {
 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                     <button><a href="/shop">Shop Now</a></button>
-
-                    <button>Become a Seller</button>
+                    <button><a href="/seller-form">Become a Seller</a></button>
                 </div>
             </div>
 

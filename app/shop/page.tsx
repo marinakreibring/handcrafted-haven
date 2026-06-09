@@ -31,9 +31,8 @@ export default async function ShopPage() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                    <button>Shop Now</button>
-
-                    <button>Become a Seller</button>
+                    <button><a href="/artisans">Our Artisans</a></button>
+                    <button><a href="/seller-form">Become a Seller</a></button>
                 </div>
             </div>
 

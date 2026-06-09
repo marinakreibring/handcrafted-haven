@@ -27,6 +27,7 @@ export default function ShopContent({
         onCategoryChange={setSelectedCategory}
       />
 
+  
       <ProductCards
         products={filteredProducts}
       />

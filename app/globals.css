@@ -39,6 +39,7 @@ h1, h2, h3 {
   max-width: 42rem;
   margin: 0 auto;
   font-size: 1.25rem;
+  text-align: center;
 }
 
 button {
@@ -127,7 +128,7 @@ button:hover {
   max-width: 300px;
   margin: 1rem auto;
 }
-.seller-form input, .seller-form textarea {
+.seller-form input, .seller-form textarea, .seller-form select {
   background: var(--card-bg);
   color: var(--foreground);
   border: 1px solid var(--border-color);

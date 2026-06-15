@@ -121,7 +121,9 @@ export default function ProductCards({
                         </button>
 
                         <button>
-                          Contact Seller
+                          <a href="/review-form">
+                            Leave a Review
+                          </a>
                         </button>
                       </div>
                     </div>

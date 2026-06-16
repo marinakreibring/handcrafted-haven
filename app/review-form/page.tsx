@@ -2,8 +2,12 @@
 
 import { useActionState } from "react";
 import { submitReviewForm } from "../actions/reviewActions";
+import { useSearchParams } from "next/navigation";
 
 export default function ReviewFormPage() {
+
+    const searchParams = useSearchParams();
+    const productId = searchParams.get("productId");
 
     const [state, formAction] = useActionState(
         submitReviewForm,
@@ -25,6 +29,12 @@ export default function ReviewFormPage() {
       </p>
 
       <form className="seller-form" action={formAction}>
+
+        <input
+          type="hidden"
+          name="productId"
+          value={productId ?? ""}
+        />
 
         <input
           type="text"

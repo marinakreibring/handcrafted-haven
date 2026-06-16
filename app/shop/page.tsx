@@ -8,10 +8,15 @@ import ShopContent from "@/components/ShopContent";
 
 export default async function ShopPage() {  
     const products = await sql`
-    SELECT *
-    FROM products
-    ORDER BY title
-  `;  
+        SELECT
+            products.*,
+            ROUND(AVG(reviews.rating), 1) AS rating
+            FROM products
+            LEFT JOIN reviews
+                ON products.id = reviews.product_id
+                GROUP BY products.id
+                ORDER BY products.title
+            `;
     return (
         <main className="container-custom">
         <Navbar />

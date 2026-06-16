@@ -9,12 +9,13 @@ export async function submitReviewForm(
   const name = formData.get("name") as string;
   const rating = Number(formData.get("rating"));
   const review = formData.get("review") as string;
+  const productId = Number(formData.get("productId"));
 
   await sql`
     INSERT INTO reviews
-    (name, rating, review)
+    (name, rating, review, product_id)
     VALUES
-    (${name}, ${rating}, ${review})
+    (${name}, ${rating}, ${review}, ${productId})
   `;
 
   return {

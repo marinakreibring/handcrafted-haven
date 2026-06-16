@@ -10,6 +10,7 @@ type Product = {
   seller: string;
   description: string;
   image_url: string;
+  rating: number | null;
 };
 
 export default function ProductCards({
@@ -121,11 +122,34 @@ export default function ProductCards({
                         </button>
 
                         <button>
-                          <a href="/review-form">
-                            Leave a Review
+                          <a
+                            href={`/review-form?productId=${product.id}`}
+                          >
+                            Leave Review
                           </a>
                         </button>
                       </div>
+
+                      <div className="mt-8">
+                        {product.rating ? (
+                          <>
+                            <p className="text-yellow-500 text-lg">
+                              {"⭐".repeat(Math.round(product.rating))}
+                            </p>
+
+                            <p className="text-sm text-gray-500">
+                              rated {product.rating} / 5
+                            </p>
+                          </>
+                        ) : (
+                          <p className="text-sm text-gray-500">
+                            No reviews yet
+                          </p>
+                        )}    
+                   
+
+                      </div>
+
                     </div>
                   </div>
                 </div>

@@ -11,6 +11,8 @@ type Product = {
   description: string;
   image_url: string;
   rating: number | null;
+  latest_review: string | null;
+  latest_reviewer: string | null;
 };
 
 export default function ProductCards({
@@ -130,7 +132,7 @@ export default function ProductCards({
                         </button>
                       </div>
 
-                      <div className="mt-8">
+                      <div className="mt-4">
                         {product.rating ? (
                           <>
                             <p className="text-yellow-500 text-lg">
@@ -146,7 +148,19 @@ export default function ProductCards({
                             No reviews yet
                           </p>
                         )}    
-                   
+                        <div className="mt-2 border-t pt-2">
+                          {product.latest_review && (
+                          <>
+                          <p className="text-sm italic text-gray-700">
+                          "{product.latest_review}"
+                          </p>
+
+                          <p className="text-xs text-gray-500 mt-1">
+                             — {product.latest_reviewer}
+                          </p>
+                        </>
+                        )}
+                      </div>
 
                       </div>
 
@@ -156,7 +170,7 @@ export default function ProductCards({
 
                 <button
                   onClick={() => toggleCard(product.id)}
-                  className="w-full mt-6"
+                  className="w-full mt-4"
                 >
                   {isExpanded
                     ? "Close Details"

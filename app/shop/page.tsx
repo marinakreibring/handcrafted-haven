@@ -17,6 +17,24 @@ export default async function ShopPage() {
                 GROUP BY products.id
                 ORDER BY products.title
             `;
+
+    const reviews = await sql`
+        SELECT *
+            FROM reviews
+            ORDER BY id DESC
+            `;
+
+    const productsWithReviews = products.map((product) => {
+        const latestReview = reviews.find(
+        (review) => review.product_id === product.id
+        );
+
+    return {
+    ...product,
+        latest_review: latestReview?.review || null,
+        latest_reviewer: latestReview?.name || null,
+        };
+    });
     return (
         <main className="container-custom">
         <Navbar />
@@ -67,7 +85,7 @@ export default async function ShopPage() {
                     supports independent artisans.
                 </p>
         
-                <ShopContent products={products as any} />
+                <ShopContent products={productsWithReviews as any} />
                         
             </div>
                 

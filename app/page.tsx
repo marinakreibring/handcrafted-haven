@@ -55,7 +55,7 @@ export default function Home() {
         {/* LEFT SIDE */}
         <div>
           <h2 className="text-5xl md:text-6xl mb-6 leading-tight">
-            Discover Unique Handmade Treasures
+            Discover Authentic Handmade Treasures
           </h2>
 
           <p className="text-lg mb-8 max-w-md">

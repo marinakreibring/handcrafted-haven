@@ -46,11 +46,11 @@ export default async function ShopPage() {
             {/* LEFT SIDE */}
             <div>
                 <h2 className="text-5xl md:text-6xl mb-6 leading-tight">
-                    Handcrafted Goods, <br /> Made with Love
+                    Unique Goods, <br /> Made with Love
                 </h2>
 
                 <p className="text-lg mb-8 max-w-md ">
-                    Discover unique handmade products created by talented artisans.
+                    Discover exclusive handmade products created by talented artisans.
                     Every item is crafted with care and reflects the creativity,
                     skill, and passion of its maker.
                 </p>

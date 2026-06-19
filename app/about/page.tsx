@@ -20,7 +20,7 @@ export default function AboutPage() {
 
                 <p className="text-lg mb-8 max-w-md">
                     Handcrafted Haven connects talented artisans with people who appreciate 
-                    unique, handmade creations and sustainable craftsmanship.
+                    one-of-a-kind, handmade creations and sustainable craftsmanship.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
